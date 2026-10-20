@@ -1,17 +1,19 @@
 {
-  "background_color": "#121212",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "Velu Drop Taxi",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "VeluTaxi",
-  "start_url": "/",
-  "theme_color": "#ffcc00",
-  "id": "Velu Drop Taxi",
   "description": "Villupuram Velu Drop Taxi Service",
-  "share_target": {
-    "method": "GET"
-  },
-  "lang": "ta"
+  "start_url": "./app.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ffcc00",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "https://velubillu007-art.github.io/drop-taxi-villupuram/Gemini_Generated_Image_kaosvnkaosvnkaos.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
