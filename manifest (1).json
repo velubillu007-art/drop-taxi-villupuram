@@ -1,0 +1,12 @@
+{
+  "background_color": "#121212",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Velu Drop Taxi",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "VeluTaxi",
+  "start_url": "/",
+  "theme_color": "#ffcc00",
+  "description": "Villupuram Velu Drop Taxi Service"
+}
