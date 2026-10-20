@@ -3,52 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villupuram Velu Drop Taxi</title>
+    <title>Villupuram Velu Drop Taxi | Best Outstation & Airport Taxi</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <span><i class="fa-solid fa-clock"></i> 24/7 Available across Tamil Nadu & South India</span>
+        <span><i class="fa-solid fa-phone"></i> Call / WhatsApp: <a href="tel:9384427972">9384427972</a></span>
+    </div>
 
     <!-- Header Navbar -->
     <header class="navbar">
         <div class="logo">
             <h2>Velu <span>Drop Taxi</span></h2>
+            <small>Villupuram Outstation Service</small>
         </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#tariff">Tariff</a>
-            <a href="#services">Services</a>
+            <a href="#tariff">Tariff & Fleet</a>
             <a href="#why-us">Why Us</a>
+            <a href="#routes">Popular Routes</a>
+            <a href="#service-area">Service Area</a>
+            <a href="#how-it-works">How It Works</a>
         </nav>
         <div class="header-right">
-            <a href="tel:9384427972" class="book-cab-btn"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+            <a href="tel:9384427972" class="book-cab-btn"><i class="fa-solid fa-phone-volume"></i> CALL 9384427972</a>
         </div>
     </header>
 
-    <!-- Hero Section with Booking Form -->
+    <!-- Hero Section with Live Booking Form -->
     <section class="hero" id="home">
         <div class="hero-content">
+            <span class="badge-hero">100% SAFE & ONE-WAY DROPS</span>
             <h1>Airport & City Drops <br><span class="highlight">Made Simple</span></h1>
-            <p>On-time airport and city drop taxis with experienced drivers who know the routes well.</p>
-            <!-- Phone call trigger button -->
-            <a href="tel:9384427972" class="call-btn"><i class="fa-solid fa-phone"></i> +91 9384427972 &rarr;</a>
+            <p>On-time airport and city drop taxis with experienced drivers who know all South Indian routes well. Pay only for one-way distance!</p>
+            <div class="hero-buttons">
+                <a href="tel:9384427972" class="call-btn"><i class="fa-solid fa-phone"></i> +91 9384427972</a>
+                <a href="https://wa.me/919384427972?text=Hello%20Velu%20Drop%20Taxi,%20I%20need%20a%20cab%20booking." target="_blank" class="wa-hero-btn"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp</a>
+            </div>
         </div>
 
         <div class="booking-box" id="booking-form">
             <div class="trip-tabs">
-                <button type="button" class="tab active" onclick="selectTrip('One Way')">One Way</button>
-                <button type="button" class="tab" onclick="selectTrip('Round Trip')">Round Trip</button>
+                <button type="button" class="tab active" onclick="selectTrip('One Way', this)">One Way</button>
+                <button type="button" class="tab" onclick="selectTrip('Round Trip', this)">Round Trip</button>
             </div>
             <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
                 <div class="form-row">
-                    <input type="text" id="pickup" placeholder="Pickup City" required>
-                    <input type="text" id="drop" placeholder="Drop City" required>
+                    <input type="text" id="pickup" placeholder="Pickup City (e.g. Villupuram)" required>
+                    <input type="text" id="drop" placeholder="Drop City (e.g. Chennai)" required>
                 </div>
                 <div class="form-row">
                     <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" value="9384427972" required>
                 </div>
-                <div class="form-label">PICKUP DETAILS</div>
+                <div class="form-label">PICKUP DATE & TIME</div>
                 <div class="form-row">
                     <input type="date" id="date" required>
                     <input type="time" id="time" required>
@@ -56,8 +68,9 @@
                 <div class="form-row-full">
                     <select id="vehicle" required>
                         <option value="">Select Vehicle</option>
-                        <option value="Sedan (Swift Dzire / Etios)">Sedan (Swift Dzire / Etios)</option>
-                        <option value="SUV (Ertiga / Innova)">SUV (Ertiga / Innova)</option>
+                        <option value="Sedan (Swift Dzire / Etios)">Sedan (Swift Dzire / Etios) - 4 Seats</option>
+                        <option value="SUV (Ertiga / Innova)">SUV (Ertiga / Innova) - 6/7 Seats</option>
+                        <option value="Innova Crysta">Innova Crysta - Premium 7 Seats</option>
                     </select>
                 </div>
                 <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> BOOK NOW VIA WHATSAPP</button>
@@ -65,80 +78,218 @@
         </div>
     </section>
 
-    <!-- Our Premium Fleet / Tariff Section -->
+    <!-- Fleet & Tariff Section -->
     <section class="fleet-section" id="tariff">
-        <div class="section-title">
-            <h2>Our <span>Premium Fleet.</span></h2>
+        <div class="section-title text-center">
+            <small class="tag">PRICING & VEHICLES</small>
+            <h2>Our <span>Premium Fleet</span></h2>
             <p>Transparent per-kilometer pricing with your comfort in mind. No hidden costs.</p>
         </div>
-        <div class="fleet-container">
-            <div class="fleet-sidebar">
-                <div class="fleet-item active">
-                    <h4>Sedan</h4>
-                    <p>STARTS ₹14/KM</p>
-                </div>
-                <div class="fleet-item">
-                    <h4>Etios</h4>
-                    <p>STARTS ₹14/KM</p>
-                </div>
-                <div class="fleet-item">
-                    <h4>SUV</h4>
-                    <p>STARTS ₹19/KM</p>
-                </div>
-                <div class="fleet-item">
-                    <h4>Innova</h4>
-                    <p>STARTS ₹21/KM</p>
-                </div>
-            </div>
+        <div class="fleet-grid">
+            <!-- Sedan Card -->
             <div class="fleet-card">
-                <div class="fleet-info">
-                    <span class="badge">ECONOMY</span> <span class="permit">&#10004; ALL INDIA PERMIT</span>
+                <div class="fleet-header">
+                    <span class="fleet-badge">ECONOMY</span>
                     <h3>Sedan</h3>
-                    <p class="sub">Swift Dzire Or Toyota Glanza</p>
-                    <div class="features">
-                        <span><i class="fa-solid fa-user"></i> 4 Seats</span>
-                        <span><i class="fa-solid fa-briefcase"></i> 2 Bags</span>
-                    </div>
-                    <div class="pricing">
-                        <div class="price-box">
-                            <small>ONE WAY</small>
-                            <h3>₹14 <span>/km</span></h3>
-                        </div>
-                        <div class="price-box highlight-box">
-                            <small>ROUND TRIP</small>
-                            <h3>₹13 <span>/km</span></h3>
-                        </div>
-                    </div>
-                    <p class="driver-beta">Driver Beta (Batta): <strong>₹400</strong></p>
-                    <a href="tel:9384427972" class="book-fleet-btn"><i class="fa-solid fa-phone"></i> CALL TO BOOK</a>
+                    <p>Swift Dzire or Toyota Etios</p>
                 </div>
-                <div class="fleet-image">
-                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Sedan Car">
+                <div class="fleet-details">
+                    <span><i class="fa-solid fa-user"></i> 4 Seats</span>
+                    <span><i class="fa-solid fa-briefcase"></i> 2 Luggage Bags</span>
+                    <span><i class="fa-solid fa-snowflake"></i> AC Vehicle</span>
                 </div>
+                <div class="pricing-box">
+                    <div class="p-item">
+                        <small>ONE WAY</small>
+                        <h3>₹14 <span>/km</span></h3>
+                    </div>
+                    <div class="p-item highlight-price">
+                        <small>ROUND TRIP</small>
+                        <h3>₹13 <span>/km</span></h3>
+                    </div>
+                </div>
+                <p class="driver-batta">Driver Beta (Batta): <strong>₹400 / day</strong></p>
+                <a href="https://wa.me/919384427972?text=I%20want%20to%20book%20a%20Sedan%20Taxi" target="_blank" class="book-card-btn"><i class="fa-brands fa-whatsapp"></i> BOOK THIS SEDAN</a>
+            </div>
+
+            <!-- SUV Card -->
+            <div class="fleet-card popular">
+                <div class="popular-tag">MOST POPULAR</div>
+                <div class="fleet-header">
+                    <span class="fleet-badge">COMFORT</span>
+                    <h3>SUV</h3>
+                    <p>Maruti Ertiga or Mahindra Xylo</p>
+                </div>
+                <div class="fleet-details">
+                    <span><i class="fa-solid fa-user"></i> 6-7 Seats</span>
+                    <span><i class="fa-solid fa-briefcase"></i> 4 Luggage Bags</span>
+                    <span><i class="fa-solid fa-snowflake"></i> Dual AC</span>
+                </div>
+                <div class="pricing-box">
+                    <div class="p-item">
+                        <small>ONE WAY</small>
+                        <h3>₹19 <span>/km</span></h3>
+                    </div>
+                    <div class="p-item highlight-price">
+                        <small>ROUND TRIP</small>
+                        <h3>₹18 <span>/km</span></h3>
+                    </div>
+                </div>
+                <p class="driver-batta">Driver Beta (Batta): <strong>₹500 / day</strong></p>
+                <a href="https://wa.me/919384427972?text=I%20want%20to%20book%20an%20SUV%20Taxi" target="_blank" class="book-card-btn"><i class="fa-brands fa-whatsapp"></i> BOOK THIS SUV</a>
+            </div>
+
+            <!-- Innova Card -->
+            <div class="fleet-card">
+                <div class="fleet-header">
+                    <span class="fleet-badge">PREMIUM</span>
+                    <h3>Innova / Crysta</h3>
+                    <p>Toyota Innova Crysta</p>
+                </div>
+                <div class="fleet-details">
+                    <span><i class="fa-solid fa-user"></i> 7 Seats</span>
+                    <span><i class="fa-solid fa-briefcase"></i> 5 Luggage Bags</span>
+                    <span><i class="fa-solid fa-star"></i> Luxury Comfort</span>
+                </div>
+                <div class="pricing-box">
+                    <div class="p-item">
+                        <small>ONE WAY</small>
+                        <h3>₹22 <span>/km</span></h3>
+                    </div>
+                    <div class="p-item highlight-price">
+                        <small>ROUND TRIP</small>
+                        <h3>₹20 <span>/km</span></h3>
+                    </div>
+                </div>
+                <p class="driver-batta">Driver Beta (Batta): <strong>₹600 / day</strong></p>
+                <a href="https://wa.me/919384427972?text=I%20want%20to%20book%20an%20Innova%20Taxi" target="_blank" class="book-card-btn"><i class="fa-brands fa-whatsapp"></i> BOOK INNOVA</a>
             </div>
         </div>
     </section>
 
-    <!-- Floating Action Buttons -->
+    <!-- Why Choose Us -->
+    <section class="why-us-section" id="why-us">
+        <div class="section-title text-center">
+            <small class="tag">THE VELU DROP TAXI ADVANTAGE</small>
+            <h2>Why We Are The Best For Your Next Trip</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fa-solid fa-plane-departure icon"></i>
+                <h3>Airport Transfers</h3>
+                <p>Start your flight stress-free. On-time doorstep pickup and airport drops guaranteed.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-headset icon"></i>
+                <h3>Real People, 24/7 Support</h3>
+                <p>No bots. Direct call and WhatsApp connection with owner Velmurugan anytime.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-wallet icon"></i>
+                <h3>Zero Return Fare</h3>
+                <p>Pay strictly for one-way distance for outstation drops. Save up to 40% on travel.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved icon"></i>
+                <h3>Family-First Safety</h3>
+                <p>Clean, sanitized cars with polite, verified drivers for safe family travel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes -->
+    <section class="routes-section" id="routes">
+        <div class="section-title text-center">
+            <small class="tag">TOP DESTINATIONS FROM VILLUPURAM</small>
+            <h2>Popular One-Way Routes</h2>
+        </div>
+        <div class="routes-grid">
+            <div class="route-card">
+                <h4>Villupuram &rarr; Chennai Airport / City</h4>
+                <p>One-Way Approx Fare: <strong>₹2,400</strong></p>
+                <a href="https://wa.me/919384427972?text=Book%20Villupuram%20to%20Chennai%20Taxi" target="_blank" class="mini-btn"><i class="fa-brands fa-whatsapp"></i> Book Route</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram &rarr; Pondicherry</h4>
+                <p>One-Way Approx Fare: <strong>₹800</strong></p>
+                <a href="https://wa.me/919384427972?text=Book%20Villupuram%20to%20Pondicherry%20Taxi" target="_blank" class="mini-btn"><i class="fa-brands fa-whatsapp"></i> Book Route</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram &rarr; Bengaluru</h4>
+                <p>One-Way Approx Fare: <strong>₹4,800</strong></p>
+                <a href="https://wa.me/919384427972?text=Book%20Villupuram%20to%20Bangalore%20Taxi" target="_blank" class="mini-btn"><i class="fa-brands fa-whatsapp"></i> Book Route</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram &rarr; Trichy / Madurai</h4>
+                <p>One-Way Approx Fare: <strong>₹2,800 / ₹4,500</strong></p>
+                <a href="https://wa.me/919384427972?text=Book%20Villupuram%20to%20Trichy%20Taxi" target="_blank" class="mini-btn"><i class="fa-brands fa-whatsapp"></i> Book Route</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="service-area" id="service-area">
+        <div class="section-title text-center">
+            <small class="tag">COVERAGE</small>
+            <h2>Drop Taxi Service Areas</h2>
+        </div>
+        <div class="area-list">
+            <span>Villupuram</span> <span>Chennai</span> <span>Pondicherry</span> <span>Bengaluru</span> <span>Trichy</span> <span>Madurai</span> <span>Coimbatore</span> <span>Salem</span> <span>Tirupati</span> <span>Vellore</span> <span>Cuddalore</span> <span>Kallakurichi</span> <span>Tiruvannamalai</span> <span>Erode</span> <span>Thanjavur</span>
+        </div>
+    </section>
+
+    <!-- 3 Easy Steps Section -->
+    <section class="steps-section" id="how-it-works">
+        <div class="section-title text-center light">
+            <small class="tag">HOW IT WORKS</small>
+            <h2>Book Your Ride in <span>3 Easy Steps</span></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>1. Enter Trip Details</h3>
+                <p>Fill in Pickup, Drop, Date, and Time in the booking form.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>2. Instant WhatsApp Confirmation</h3>
+                <p>Get exact fare estimation and driver details on WhatsApp instantly.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-solid fa-car-side"></i></div>
+                <h3>3. Arrive Safely</h3>
+                <p>Clean cab arrives at your doorstep on time. Pay after reaching!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons (Phone & WhatsApp) -->
     <div class="floating-btn">
-        <a href="tel:9384427972" class="call-float"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://wa.me/919384427972" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:9384427972" class="call-float" title="Call Now"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/919384427972?text=Hi%20Velu%20Drop%20Taxi,%20I%20want%20to%20book%20a%20cab." class="whatsapp-float" target="_blank" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Villupuram Velu Drop Taxi. All Rights Reserved. Contact: <a href="tel:9384427972" style="color:#ffc107; text-decoration:none;">+91 9384427972</a></p>
+        <div class="footer-content">
+            <h3>Villupuram Velu Drop Taxi</h3>
+            <p>Mundiyampakkam, Villupuram, Tamil Nadu - 605601</p>
+            <p>Contact / Booking: <a href="tel:9384427972">+91 9384427972</a> | Email: <a href="mailto:velubillu007@gmail.com">velubillu007@gmail.com</a></p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Villupuram Velu Drop Taxi (Velmurugan Travels). All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- JavaScript to Handle WhatsApp Booking -->
+    <!-- JavaScript code for Form handling -->
     <script>
         let selectedTripType = 'One Way';
 
-        function selectTrip(type) {
+        function selectTrip(type, element) {
             selectedTripType = type;
             let tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            element.classList.add('active');
         }
 
         function sendToWhatsApp(e) {
@@ -153,19 +304,19 @@
 
             let myPhone = "919384427972";
 
-            let message = `*New Booking Request - Velu Drop Taxi*%0A%0A` +
+            let message = `*NEW TAXI BOOKING REQUEST - VELU DROP TAXI*%0A%0A` +
                           `*Trip Type:* ${selectedTripType}%0A` +
                           `*Name:* ${name}%0A` +
                           `*Customer Phone:* ${phone}%0A` +
                           `*Pickup City:* ${pickup}%0A` +
                           `*Drop City:* ${drop}%0A` +
-                          `*Date:* ${date}%0A` +
-                          `*Time:* ${time}%0A` +
-                          `*Vehicle:* ${vehicle}`;
+                          `*Pickup Date:* ${date}%0A` +
+                          `*Pickup Time:* ${time}%0A` +
+                          `*Vehicle Type:* ${vehicle}%0A%0A` +
+                          `Please confirm availability and fare calculation.`;
 
             window.open(`https://wa.me/${myPhone}?text=${message}`, '_blank');
         }
     </script>
 </body>
 </html>
-  
