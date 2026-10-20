@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villupuram Velu Drop Taxi App</title>
+    <title>Velu Drop Taxi - Book & Bill</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Firebase SDKs -->
@@ -13,67 +13,125 @@
     <style>
         * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background:#121212; color:#fff; padding:15px; display:flex; justify-content:center; align-items:center; min-height:100vh; }
-        .app-container { background:#1e1e1e; border:2px solid #ffcc00; border-radius:16px; padding:25px; width:100%; max-width:420px; box-shadow:0 10px 30px rgba(255,204,0,0.2); }
-        .app-header { text-align:center; margin-bottom:20px; }
-        .app-header h2 { color:#ffcc00; font-size:22px; font-weight:700; margin-bottom:5px; }
-        .app-header p { font-size:13px; color:#aaa; }
-        .form-group { margin-bottom:15px; text-align:left; }
-        .form-group label { display:block; font-size:12px; color:#ffcc00; margin-bottom:5px; font-weight:bold; }
-        .input-box { width:100%; padding:12px 15px; border-radius:8px; border:1px solid #333; background:#2a2a2a; color:#fff; font-size:14px; outline:none; transition:0.3s; }
+        .app-card { background:#1e1e1e; border:2px solid #ffcc00; border-radius:20px; padding:20px; width:100%; max-width:420px; box-shadow:0 10px 30px rgba(255,204,0,0.25); }
+        
+        /* App Header & Logo */
+        .app-header { text-align:center; padding-bottom:15px; border-bottom:1px solid #333; margin-bottom:15px; }
+        .logo-box { background:#ffcc00; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; color:#000; font-size:32px; box-shadow:0 4px 15px rgba(255,204,0,0.5); }
+        .app-header h2 { color:#ffcc00; font-size:22px; font-weight:800; letter-spacing:0.5px; }
+        .app-header p { font-size:12px; color:#aaa; margin-top:2px; }
+
+        /* Form Controls */
+        .form-group { margin-bottom:12px; text-align:left; }
+        .form-group label { display:block; font-size:11px; color:#ffcc00; margin-bottom:4px; font-weight:bold; letter-spacing:0.5px; }
+        .input-box { width:100%; padding:11px 14px; border-radius:8px; border:1px solid #333; background:#2a2a2a; color:#fff; font-size:13px; outline:none; transition:0.3s; }
         .input-box:focus { border-color:#ffcc00; }
-        select.input-box { cursor:pointer; }
-        .btn-submit { width:100%; padding:15px; background:#ffcc00; color:#000; font-weight:bold; border:none; border-radius:8px; font-size:16px; cursor:pointer; margin-top:10px; transition:0.3s; box-shadow:0 4px 15px rgba(255,204,0,0.4); }
-        .btn-submit:hover { background:#e6b800; transform:scale(1.01); }
-        .call-btn { display:block; text-align:center; margin-top:20px; color:#25d366; text-decoration:none; font-weight:bold; font-size:15px; border:1px solid #25d366; padding:10px; border-radius:8px; background:rgba(37,211,102,0.1); }
-        .call-btn i { margin-right:8px; }
+
+        /* Buttons */
+        .btn-submit { width:100%; padding:14px; background:#ffcc00; color:#000; font-weight:bold; border:none; border-radius:10px; font-size:15px; cursor:pointer; margin-top:10px; transition:0.3s; box-shadow:0 4px 15px rgba(255,204,0,0.4); }
+        .btn-submit:hover { background:#e6b800; }
+        .call-btn { display:block; text-align:center; margin-top:12px; color:#25d366; text-decoration:none; font-weight:bold; font-size:14px; border:1px solid #25d366; padding:10px; border-radius:8px; background:rgba(37,211,102,0.1); }
+
+        /* Modal / Bill Receipt */
+        .bill-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; padding:15px; z-index:999; }
+        .bill-box { background:#fff; color:#000; width:100%; max-width:380px; border-radius:12px; padding:20px; position:relative; box-shadow:0 5px 25px rgba(0,0,0,0.5); }
+        .bill-header { text-align:center; border-bottom:2px dashed #ccc; padding-bottom:10px; margin-bottom:10px; }
+        .bill-header h3 { font-size:18px; color:#000; }
+        .bill-row { display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px; }
+        .bill-total { border-top:2px solid #000; border-bottom:2px solid #000; padding:8px 0; margin:10px 0; font-weight:bold; font-size:15px; }
+        .qr-section { text-align:center; margin-top:12px; padding-top:10px; border-top:1px solid #eee; }
+        .qr-section img { width:130px; height:130px; margin-top:5px; border:1px solid #ddd; padding:5px; border-radius:8px; }
+        .btn-print { width:100%; padding:10px; background:#000; color:#fff; border:none; border-radius:6px; margin-top:10px; cursor:pointer; font-weight:bold; }
+        .btn-close { position:absolute; top:10px; right:12px; background:none; border:none; font-size:18px; cursor:pointer; color:#888; }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
+    <div class="app-card">
         <div class="app-header">
-            <h2><i class="fa-solid fa-taxi"></i> Velu Drop Taxi</h2>
-            <p>Villupuram Local & Outstation Cab Booking</p>
+            <div class="logo-box">
+                <i class="fa-solid fa-taxi"></i>
+            </div>
+            <h2>VELU DROP TAXI</h2>
+            <p>Villupuram's #1 Premium Taxi Service</p>
         </div>
 
         <form id="bookingForm">
             <div class="form-group">
                 <label><i class="fa-solid fa-location-dot"></i> PICKUP LOCATION</label>
-                <input type="text" id="pickup" class="input-box" placeholder="e.g. Mundiyampakkam, Villupuram" required>
+                <input type="text" id="pickup" class="input-box" placeholder="e.g. Villupuram New Bus Stand" required>
             </div>
 
             <div class="form-group">
                 <label><i class="fa-solid fa-location-arrow"></i> DROP LOCATION</label>
-                <input type="text" id="drop" class="input-box" placeholder="e.g. Chennai Airport, Puducherry" required>
+                <input type="text" id="drop" class="input-box" placeholder="e.g. Chennai Airport / Pondicherry" required>
             </div>
 
             <div class="form-group">
-                <label><i class="fa-solid fa-user"></i> YOUR NAME</label>
-                <input type="text" id="name" class="input-box" placeholder="Enter your full name" required>
+                <label><i class="fa-solid fa-road"></i> ESTIMATED DISTANCE (in KM)</label>
+                <input type="number" id="distance" class="input-box" placeholder="e.g. 160" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> CUSTOMER NAME</label>
+                <input type="text" id="name" class="input-box" placeholder="Enter full name" required>
             </div>
 
             <div class="form-group">
                 <label><i class="fa-solid fa-phone"></i> MOBILE NUMBER</label>
-                <input type="tel" id="phone" class="input-box" placeholder="Enter your mobile number" required>
+                <input type="tel" id="phone" class="input-box" placeholder="Enter 10 digit mobile number" required>
             </div>
 
             <div class="form-group">
-                <label><i class="fa-solid fa-car"></i> SELECT VEHICLE TYPE</label>
+                <label><i class="fa-solid fa-car"></i> VEHICLE TYPE</label>
                 <select id="vehicle" class="input-box">
-                    <option value="Sedan (Swift Dzire) - ₹14/km">Sedan (Swift Dzire - 4 Seats) - ₹14/km</option>
-                    <option value="SUV (Ertiga) - ₹19/km">SUV (Ertiga - 6 Seats) - ₹19/km</option>
-                    <option value="Innova - ₹22/km">Innova - ₹22/km</option>
+                    <option value="Sedan" data-rate="14">Sedan (Swift Dzire - 4 Seats) - ₹14/km</option>
+                    <option value="SUV" data-rate="19">SUV (Ertiga - 6 Seats) - ₹19/km</option>
+                    <option value="Innova" data-rate="22">Innova (7 Seats) - ₹22/km</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn-submit"><i class="fa-solid fa-bolt"></i> BOOK RIDE NOW</button>
+            <button type="submit" class="btn-submit"><i class="fa-solid fa-file-invoice-dollar"></i> BOOK & GENERATE BILL</button>
         </form>
 
         <a href="tel:9384427972" class="call-btn"><i class="fa-solid fa-phone"></i> Call Driver Directly: 9384427972</a>
     </div>
 
+    <!-- Bill Receipt Modal -->
+    <div class="bill-modal" id="billModal">
+        <div class="bill-box">
+            <button class="btn-close" onclick="closeBill()">&times;</button>
+            <div class="bill-header">
+                <h3>VELU DROP TAXI</h3>
+                <p style="font-size:11px; color:#555;">Velmurugan Travels, Villupuram</p>
+                <p style="font-size:11px; color:#555;">Ph: 9384427972</p>
+            </div>
+
+            <div class="bill-row"><span>Date:</span> <strong id="bDate">--</strong></div>
+            <div class="bill-row"><span>Customer Name:</span> <strong id="bName">--</strong></div>
+            <div class="bill-row"><span>Phone:</span> <strong id="bPhone">--</strong></div>
+            <div class="bill-row"><span>Route:</span> <strong id="bRoute">--</strong></div>
+            <div class="bill-row"><span>Vehicle:</span> <strong id="bVehicle">--</strong></div>
+            <div class="bill-row"><span>Distance:</span> <strong id="bDistance">-- KM</strong></div>
+            
+            <div class="bill-total bill-row">
+                <span>ESTIMATED FARE:</span>
+                <span id="bTotal">₹0</span>
+            </div>
+
+            <!-- UPI QR Code Section -->
+            <div class="qr-section">
+                <p style="font-size:12px; font-weight:bold; color:#333;">SCAN & PAY VIA UPI / GPAY</p>
+                <img id="qrImage" src="" alt="UPI QR Code">
+                <p style="font-size:10px; color:#777; margin-top:3px;">GPay / PhonePe / Paytm / BHIM</p>
+            </div>
+
+            <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> PRINT / SAVE PDF RECEIPT</button>
+        </div>
+    </div>
+
     <script>
-        // Your Firebase Configuration
+        // Firebase Config
         const firebaseConfig = {
             apiKey: "AIzaSyB73ZKiPA4J_p3MVqEVfciQSZJXwHBzN7I",
             authDomain: "velu-drop-taxi.firebaseapp.com",
@@ -85,42 +143,69 @@
             measurementId: "G-X87MMR3Z45"
         };
 
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // Handle Form Submit
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
             let pickup = document.getElementById('pickup').value;
             let drop = document.getElementById('drop').value;
+            let distance = parseFloat(document.getElementById('distance').value);
             let name = document.getElementById('name').value;
             let phone = document.getElementById('phone').value;
-            let vehicle = document.getElementById('vehicle').value;
+            let vehicleSelect = document.getElementById('vehicle');
+            let vehicleName = vehicleSelect.value;
+            let ratePerKm = parseFloat(vehicleSelect.options[vehicleSelect.selectedIndex].getAttribute('data-rate'));
 
-            // Save Data to Firebase Realtime Database
-            let rideRef = database.ref('rides').push();
-            rideRef.set({
+            let totalFare = distance * ratePerKm;
+            let currentDate = new Date().toLocaleDateString('en-IN');
+
+            // Set Bill Values
+            document.getElementById('bDate').innerText = currentDate;
+            document.getElementById('bName').innerText = name;
+            document.getElementById('bPhone').innerText = phone;
+            document.getElementById('bRoute').innerText = pickup + " to " + drop;
+            document.getElementById('bVehicle').innerText = vehicleName;
+            document.getElementById('bDistance').innerText = distance;
+            document.getElementById('bTotal').innerText = "₹" + totalFare;
+
+            // Generate Dynamic UPI QR Code (Linked to 9384427972)
+            let upiId = "9384427972@paytm"; // Change to your UPI ID if needed
+            let qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=${upiId}&pn=VeluDropTaxi&am=${totalFare}&cu=INR`;
+            document.getElementById('qrImage').src = qrUrl;
+
+            // Show Modal
+            document.getElementById('billModal').style.display = 'flex';
+
+            // Save to Firebase
+            database.ref('rides').push({
                 name: name,
                 phone: phone,
                 pickup: pickup,
                 drop: drop,
-                vehicle: vehicle,
+                distance: distance,
+                vehicle: vehicleName,
+                totalFare: totalFare,
                 timestamp: new Date().toISOString()
             });
 
-            // Redirect to WhatsApp with Ride Details
-            let message = `*NEW APP RIDE BOOKING*%0A%0A` +
-                          `*Customer Name:* ${name}%0A` +
-                          `*Phone:* ${phone}%0A` +
-                          `*Pickup:* ${pickup}%0A` +
-                          `*Drop:* ${drop}%0A` +
-                          `*Vehicle:* ${vehicle}%0A%0A` +
-                          `_Sent via Velu Drop Taxi App_`;
+            // Send WhatsApp Notification
+            let whatsappMsg = `*NEW TAXI BOOKING & BILL*%0A%0A` +
+                              `*Name:* ${name}%0A` +
+                              `*Phone:* ${phone}%0A` +
+                              `*Route:* ${pickup} -> ${drop}%0A` +
+                              `*Distance:* ${distance} KM%0A` +
+                              `*Vehicle:* ${vehicleName}%0A` +
+                              `*Estimated Fare:* ₹${totalFare}%0A%0A` +
+                              `_Velu Drop Taxi App_`;
 
-            window.open(`https://wa.me/919384427972?text=${message}`, '_blank');
+            window.open(`https://wa.me/919384427972?text=${whatsappMsg}`, '_blank');
         });
+
+        function closeBill() {
+            document.getElementById('billModal').style.display = 'none';
+        }
     </script>
 </body>
 </html>
