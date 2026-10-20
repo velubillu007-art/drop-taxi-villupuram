@@ -21,8 +21,7 @@
             <a href="#why-us">Why Us</a>
         </nav>
         <div class="header-right">
-            <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
-            <a href="#booking-form" class="book-cab-btn">BOOK YOUR CAB</a>
+            <a href="tel:9384427972" class="book-cab-btn"><i class="fa-solid fa-phone"></i> CALL NOW</a>
         </div>
     </header>
 
@@ -31,36 +30,37 @@
         <div class="hero-content">
             <h1>Airport & City Drops <br><span class="highlight">Made Simple</span></h1>
             <p>On-time airport and city drop taxis with experienced drivers who know the routes well.</p>
-            <a href="tel:9384427972" class="call-btn">+91 9384427972 &rarr;</a>
+            <!-- Phone call trigger button -->
+            <a href="tel:9384427972" class="call-btn"><i class="fa-solid fa-phone"></i> +91 9384427972 &rarr;</a>
         </div>
 
         <div class="booking-box" id="booking-form">
             <div class="trip-tabs">
-                <button class="tab active">One Way</button>
-                <button class="tab">Round Trip</button>
+                <button type="button" class="tab active" onclick="selectTrip('One Way')">One Way</button>
+                <button type="button" class="tab" onclick="selectTrip('Round Trip')">Round Trip</button>
             </div>
-            <form>
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
                 <div class="form-row">
-                    <input type="text" placeholder="Pickup City" required>
-                    <input type="text" placeholder="Drop City" required>
+                    <input type="text" id="pickup" placeholder="Pickup City" required>
+                    <input type="text" id="drop" placeholder="Drop City" required>
                 </div>
                 <div class="form-row">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="tel" placeholder="Phone Number" value="9384427972" required>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
                 </div>
                 <div class="form-label">PICKUP DETAILS</div>
                 <div class="form-row">
-                    <input type="date">
-                    <input type="time">
+                    <input type="date" id="date" required>
+                    <input type="time" id="time" required>
                 </div>
                 <div class="form-row-full">
-                    <select>
-                        <option>Select Vehicle</option>
-                        <option>Sedan (Swift Dzire / Etios)</option>
-                        <option>SUV (Ertiga / Innova)</option>
+                    <select id="vehicle" required>
+                        <option value="">Select Vehicle</option>
+                        <option value="Sedan (Swift Dzire / Etios)">Sedan (Swift Dzire / Etios)</option>
+                        <option value="SUV (Ertiga / Innova)">SUV (Ertiga / Innova)</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn">BOOK NOW</button>
+                <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> BOOK NOW VIA WHATSAPP</button>
             </form>
         </div>
     </section>
@@ -110,120 +110,11 @@
                         </div>
                     </div>
                     <p class="driver-beta">Driver Beta (Batta): <strong>₹400</strong></p>
-                    <a href="tel:9384427972" class="book-fleet-btn">BOOK THIS SEDAN</a>
+                    <a href="tel:9384427972" class="book-fleet-btn"><i class="fa-solid fa-phone"></i> CALL TO BOOK</a>
                 </div>
                 <div class="fleet-image">
                     <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Sedan Car">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust / Partner Section -->
-    <section class="trusted-section">
-        <div class="trusted-grid">
-            <div class="trusted-images">
-                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" alt="Travel">
-            </div>
-            <div class="trusted-content">
-                <small class="tag">RELIABLE OUTSTATION TRAVEL</small>
-                <h2>Your Trusted One-Way Taxi Partner</h2>
-                <p>Experience the convenience of intercity travel without the cost of a return trip. Whether visiting Tamil Nadu temples, Bengaluru tech hubs, or Pondicherry beaches, we ensure a premium experience.</p>
-                <div class="trust-points">
-                    <div>
-                        <strong>Verified Drivers</strong>
-                        <p>Professional & polite drivers for family safety.</p>
-                    </div>
-                    <div>
-                        <strong>On-Time Pickups</strong>
-                        <p>Punctuality is our top priority for your journey.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section class="why-us-section" id="why-us">
-        <div class="section-title text-center">
-            <small class="tag">THE VELU DROP TAXI ADVANTAGE</small>
-            <h2>Why We Are The Best For Your Next Trip</h2>
-        </div>
-        <div class="cards-grid">
-            <div class="card">
-                <i class="fa-solid fa-plane-departure icon"></i>
-                <h3>Airport Transfers</h3>
-                <p>Start your flight stress-free. On-time doorstep pickups.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-headset icon"></i>
-                <h3>Real People, 24/7</h3>
-                <p>Speak to our friendly support team anytime you need help.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-wallet icon"></i>
-                <h3>Zero Return Fare</h3>
-                <p>Why pay for the empty return journey? Pay only one-way.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-shield-halved icon"></i>
-                <h3>Family-First Safety</h3>
-                <p>Clean, sanitized cars with professional drivers.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popular Routes Section -->
-    <section class="routes-section">
-        <div class="section-title text-center">
-            <small class="tag">TOP DESTINATIONS</small>
-            <h2>Popular One-Way Routes</h2>
-        </div>
-        <div class="routes-grid">
-            <div class="route-card">
-                <h4>Villupuram to Chennai</h4>
-                <p>Starting From: <strong>₹2,400</strong></p>
-                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
-            </div>
-            <div class="route-card">
-                <h4>Villupuram to Pondicherry</h4>
-                <p>Starting From: <strong>₹800</strong></p>
-                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
-            </div>
-            <div class="route-card">
-                <h4>Villupuram to Bangalore</h4>
-                <p>Starting From: <strong>₹4,500</strong></p>
-                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
-            </div>
-            <div class="route-card">
-                <h4>Villupuram to Trichy</h4>
-                <p>Starting From: <strong>₹2,800</strong></p>
-                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3 Easy Steps Section -->
-    <section class="steps-section">
-        <div class="section-title text-center light">
-            <small class="tag">HOW IT WORKS</small>
-            <h2>Book Your Ride in <span>3 Easy Steps</span></h2>
-        </div>
-        <div class="steps-grid">
-            <div class="step-box">
-                <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                <h3>1. Book Online / Call</h3>
-                <p>Choose your pickup location, destination, and time.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-icon"><i class="fa-solid fa-car"></i></div>
-                <h3>2. Driver Assigned</h3>
-                <p>Get clean car and experienced driver details quickly.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <h3>3. Arrive Safely</h3>
-                <p>Sit back and relax while our driver takes you safely.</p>
             </div>
         </div>
     </section>
@@ -236,8 +127,45 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Villupuram Velu Drop Taxi. All Rights Reserved. Contact: +91 9384427972</p>
+        <p>&copy; 2026 Villupuram Velu Drop Taxi. All Rights Reserved. Contact: <a href="tel:9384427972" style="color:#ffc107; text-decoration:none;">+91 9384427972</a></p>
     </footer>
 
+    <!-- JavaScript to Handle WhatsApp Booking -->
+    <script>
+        let selectedTripType = 'One Way';
+
+        function selectTrip(type) {
+            selectedTripType = type;
+            let tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            let pickup = document.getElementById('pickup').value;
+            let drop = document.getElementById('drop').value;
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let vehicle = document.getElementById('vehicle').value;
+
+            let myPhone = "919384427972";
+
+            let message = `*New Booking Request - Velu Drop Taxi*%0A%0A` +
+                          `*Trip Type:* ${selectedTripType}%0A` +
+                          `*Name:* ${name}%0A` +
+                          `*Customer Phone:* ${phone}%0A` +
+                          `*Pickup City:* ${pickup}%0A` +
+                          `*Drop City:* ${drop}%0A` +
+                          `*Date:* ${date}%0A` +
+                          `*Time:* ${time}%0A` +
+                          `*Vehicle:* ${vehicle}`;
+
+            window.open(`https://wa.me/${myPhone}?text=${message}`, '_blank');
+        }
+    </script>
 </body>
 </html>
+  
