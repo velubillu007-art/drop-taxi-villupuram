@@ -3,146 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Search Console Verification Tag -->
-    <meta name="google-site-verification" content="szM-SpmceQqoDWtqgNUOOmYQuafEXLK4iN43fQNMCME" />
-    <title>Drop Taxi Villupuram | 24/7 Safe & Affordable Ride</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .card h2 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-            text-align: left;
-        }
-        .feature-item {
-            background: #eef2f7;
-            padding: 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .btn-call {
-            background-color: #ff9800;
-            color: white;
-        }
-        .btn-call:hover {
-            background-color: #e68a00;
-        }
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-        .btn-whatsapp:hover {
-            background-color: #1ebe5d;
-        }
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: #333;
-            color: white;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>Villupuram Velu Drop Taxi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>🚗 Drop Taxi Villupuram</h1>
-        <p>Villupuram-ilirunthu Tamil Nadu muzhuvathum 24/7 Niranthara Drop Service</p>
+    <!-- Header Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>Velu <span>Drop Taxi</span></h2>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tariff">Tariff</a>
+            <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
+        </nav>
+        <div class="header-right">
+            <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
+            <a href="#booking-form" class="book-cab-btn">BOOK YOUR CAB</a>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <!-- Welcome Card -->
-        <div class="card">
-            <h2>Namathu Sevigal (Our Services)</h2>
-            <p>Villupuram mattumallaamal, Chennai, Coimbatore, Trichy, Madurai, Bengaluru ponra anaithu edangalukkum kammiyaana kattanathil (Affordable fare) safe-ah travel pannungal.</p>
-            
-            <div class="features">
-                <div class="feature-item">✔️ 24/7 Available (Epothum Kidaikum)</div>
-                <div class="feature-item">✔️ One-Way Drop Fare</div>
-                <div class="feature-item">✔️ Neat & Clean Cars</div>
-                <div class="feature-item">✔️ Experienced Drivers</div>
-            </div>
-
-            <h3 style="margin-top: 2rem; color: #333;">Udanadaiya Booking-kku Call / WhatsApp Cheyyungal:</h3>
-            
-            <div class="btn-container">
-                <a href="tel:9384427972" class="btn btn-call">📞 Call Now: 9384427972</a>
-                <a href="https://wa.me/919384427972?text=Vanakkam,%20Naan%20Drop%20Taxi%20book%20panna%20venum." class="btn btn-whatsapp" target="_blank">💬 WhatsApp Chat</a>
-            </div>
+    <!-- Hero Section with Booking Form -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Airport & City Drops <br><span class="highlight">Made Simple</span></h1>
+            <p>On-time airport and city drop taxis with experienced drivers who know the routes well.</p>
+            <a href="tel:9384427972" class="call-btn">+91 9384427972 &rarr;</a>
         </div>
 
-        <!-- Contact Info Card -->
-        <div class="card">
-            <h2>Thodarbu Kollungal (Contact Us)</h2>
-            <p><strong>Phone:</strong> +91 9384427972</p>
-            <p><strong>Email:</strong> velubillu007@gmail.com</p>
-            <p><strong>Location:</strong> Villupuram, Tamil Nadu</p>
+        <div class="booking-box" id="booking-form">
+            <div class="trip-tabs">
+                <button class="tab active">One Way</button>
+                <button class="tab">Round Trip</button>
+            </div>
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="Pickup City" required>
+                    <input type="text" placeholder="Drop City" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Phone Number" value="9384427972" required>
+                </div>
+                <div class="form-label">PICKUP DETAILS</div>
+                <div class="form-row">
+                    <input type="date">
+                    <input type="time">
+                </div>
+                <div class="form-row-full">
+                    <select>
+                        <option>Select Vehicle</option>
+                        <option>Sedan (Swift Dzire / Etios)</option>
+                        <option>SUV (Ertiga / Innova)</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">BOOK NOW</button>
+            </form>
         </div>
+    </section>
 
+    <!-- Our Premium Fleet / Tariff Section -->
+    <section class="fleet-section" id="tariff">
+        <div class="section-title">
+            <h2>Our <span>Premium Fleet.</span></h2>
+            <p>Transparent per-kilometer pricing with your comfort in mind. No hidden costs.</p>
+        </div>
+        <div class="fleet-container">
+            <div class="fleet-sidebar">
+                <div class="fleet-item active">
+                    <h4>Sedan</h4>
+                    <p>STARTS ₹14/KM</p>
+                </div>
+                <div class="fleet-item">
+                    <h4>Etios</h4>
+                    <p>STARTS ₹14/KM</p>
+                </div>
+                <div class="fleet-item">
+                    <h4>SUV</h4>
+                    <p>STARTS ₹19/KM</p>
+                </div>
+                <div class="fleet-item">
+                    <h4>Innova</h4>
+                    <p>STARTS ₹21/KM</p>
+                </div>
+            </div>
+            <div class="fleet-card">
+                <div class="fleet-info">
+                    <span class="badge">ECONOMY</span> <span class="permit">&#10004; ALL INDIA PERMIT</span>
+                    <h3>Sedan</h3>
+                    <p class="sub">Swift Dzire Or Toyota Glanza</p>
+                    <div class="features">
+                        <span><i class="fa-solid fa-user"></i> 4 Seats</span>
+                        <span><i class="fa-solid fa-briefcase"></i> 2 Bags</span>
+                    </div>
+                    <div class="pricing">
+                        <div class="price-box">
+                            <small>ONE WAY</small>
+                            <h3>₹14 <span>/km</span></h3>
+                        </div>
+                        <div class="price-box highlight-box">
+                            <small>ROUND TRIP</small>
+                            <h3>₹13 <span>/km</span></h3>
+                        </div>
+                    </div>
+                    <p class="driver-beta">Driver Beta (Batta): <strong>₹400</strong></p>
+                    <a href="tel:9384427972" class="book-fleet-btn">BOOK THIS SEDAN</a>
+                </div>
+                <div class="fleet-image">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Sedan Car">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Partner Section -->
+    <section class="trusted-section">
+        <div class="trusted-grid">
+            <div class="trusted-images">
+                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" alt="Travel">
+            </div>
+            <div class="trusted-content">
+                <small class="tag">RELIABLE OUTSTATION TRAVEL</small>
+                <h2>Your Trusted One-Way Taxi Partner</h2>
+                <p>Experience the convenience of intercity travel without the cost of a return trip. Whether visiting Tamil Nadu temples, Bengaluru tech hubs, or Pondicherry beaches, we ensure a premium experience.</p>
+                <div class="trust-points">
+                    <div>
+                        <strong>Verified Drivers</strong>
+                        <p>Professional & polite drivers for family safety.</p>
+                    </div>
+                    <div>
+                        <strong>On-Time Pickups</strong>
+                        <p>Punctuality is our top priority for your journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us-section" id="why-us">
+        <div class="section-title text-center">
+            <small class="tag">THE VELU DROP TAXI ADVANTAGE</small>
+            <h2>Why We Are The Best For Your Next Trip</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fa-solid fa-plane-departure icon"></i>
+                <h3>Airport Transfers</h3>
+                <p>Start your flight stress-free. On-time doorstep pickups.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-headset icon"></i>
+                <h3>Real People, 24/7</h3>
+                <p>Speak to our friendly support team anytime you need help.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-wallet icon"></i>
+                <h3>Zero Return Fare</h3>
+                <p>Why pay for the empty return journey? Pay only one-way.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved icon"></i>
+                <h3>Family-First Safety</h3>
+                <p>Clean, sanitized cars with professional drivers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="routes-section">
+        <div class="section-title text-center">
+            <small class="tag">TOP DESTINATIONS</small>
+            <h2>Popular One-Way Routes</h2>
+        </div>
+        <div class="routes-grid">
+            <div class="route-card">
+                <h4>Villupuram to Chennai</h4>
+                <p>Starting From: <strong>₹2,400</strong></p>
+                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram to Pondicherry</h4>
+                <p>Starting From: <strong>₹800</strong></p>
+                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram to Bangalore</h4>
+                <p>Starting From: <strong>₹4,500</strong></p>
+                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
+            </div>
+            <div class="route-card">
+                <h4>Villupuram to Trichy</h4>
+                <p>Starting From: <strong>₹2,800</strong></p>
+                <a href="tel:9384427972" class="mini-btn">Book Now &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Easy Steps Section -->
+    <section class="steps-section">
+        <div class="section-title text-center light">
+            <small class="tag">HOW IT WORKS</small>
+            <h2>Book Your Ride in <span>3 Easy Steps</span></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>1. Book Online / Call</h3>
+                <p>Choose your pickup location, destination, and time.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-solid fa-car"></i></div>
+                <h3>2. Driver Assigned</h3>
+                <p>Get clean car and experienced driver details quickly.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>3. Arrive Safely</h3>
+                <p>Sit back and relax while our driver takes you safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-btn">
+        <a href="tel:9384427972" class="call-float"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/919384427972" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Drop Taxi Villupuram. All Rights Reserved. | Created for Velu</p>
+        <p>&copy; 2026 Villupuram Velu Drop Taxi. All Rights Reserved. Contact: +91 9384427972</p>
     </footer>
 
 </body>
