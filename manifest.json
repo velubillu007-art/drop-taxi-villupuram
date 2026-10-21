@@ -11,16 +11,16 @@
   "dir": "ltr",
   "orientation": "any",
   "id": "https://velubillu007-art.github.io/drop-taxi-villupuram/app.html",
-  "description": "Villupuram Velu Drop Taxi Service - Book cabs and rentals easily.",
+  "description": "Villupuram Velu Drop Taxi Service",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "https://velubillu007-art.github.io/drop-taxi-villupuram/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "logo.png",
+      "src": "https://velubillu007-art.github.io/drop-taxi-villupuram/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
