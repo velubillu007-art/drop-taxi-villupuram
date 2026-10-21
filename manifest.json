@@ -1,14 +1,27 @@
 {
-  "name": "Velu Drop Taxi",
+  "name": "Velu Drop Taxi Villupuram",
   "short_name": "VeluTaxi",
-  "start_url": "app.html",
+  "start_url": "https://velubillu007-art.github.io/drop-taxi-villupuram/app.html",
+  "scope": "https://velubillu007-art.github.io/drop-taxi-villupuram/",
   "display": "standalone",
+  "display_override": ["standalone", "browser"],
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "any",
+  "id": "https://velubillu007-art.github.io/drop-taxi-villupuram/app.html",
+  "description": "Villupuram Velu Drop Taxi Service - Book cabs and rentals easily.",
   "icons": [
     {
       "src": "logo.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     }
