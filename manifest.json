@@ -1,17 +1,14 @@
 {
   "name": "Velu Drop Taxi",
   "short_name": "VeluTaxi",
-  "description": "Villupuram Velu Drop Taxi Service",
-  "start_url": "./app.html",
-  "scope": "./",
+  "start_url": "app.html",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#ffcc00",
-  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3202/3202052.png",
-      "sizes": "192x192 512x512",
+      "src": "logo.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
